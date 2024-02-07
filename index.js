@@ -1,10 +1,10 @@
 const inquirer = require('inquirer')
 const fs = require('fs')
+const { Triangle, Square, Circle } = require("./lib/shapes");
 
 const prompt = async() => {
 
-inquirer
-  .prompt([
+const input = await inquirer.prompt([
     {
       type: 'input',
       name: 'text',
@@ -27,13 +27,8 @@ inquirer
         message: 'Please enter the color you would like to use for the shape (using color name or hexadecimal number',
       }
   ])
-  .then((data) => {
-    const filename = `${data.name.toLowerCase().split(' ').join('')}.json`
 
-    fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-      err ? console.log(err) : console.log('Success!')
-    )
-  })
 }
+  
 
 prompt()
