@@ -1,6 +1,8 @@
 # SVG Maker
 A command-line application that takes in user input to generate a logo and save it as an SVG file
 
+# Video Walkthrough
+https://drive.google.com/file/d/1YwiQN1DQ9raKTfWUoBA0QGtbCuk5W_FE/view?usp=drive_link
 
 ## Description
 This application allows the user to create an SVG file in the command line using Node.js. The SVG file is a logo. The user is prompted to enter certain criteria to define the look of the logo and the text content. The user can choose up to three letter, the shape of the logo (triangle, square, circle), the shape color, and the text color. After each of these selections have been made using prompts in the command line, the SVG file is created in the examples folder. The SVG file can be viewed in the browser by copying the file path and pasting it as a URL.
