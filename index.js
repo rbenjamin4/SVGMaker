@@ -1,9 +1,12 @@
+// package libraries and specific file required
 const inquirer = require('inquirer')
 const fs = require('fs')
 const { Triangle, Square, Circle } = require("./lib/shapes")
 
+// create async function to prompt user via Inquirer
 const prompt = async() => {
 
+// define each prompt name, type, and message
 const input = await inquirer.prompt([
     {
       type: 'input',
@@ -27,6 +30,8 @@ const input = await inquirer.prompt([
         message: 'Please enter the color you would like to use for the shape (using color name or hexadecimal number',
       }
   ])
+
+  // create the SVG file based on shape classes
   .then((data) => {
     const generateLogo = (data) => {
         let shapeClass
@@ -51,6 +56,7 @@ const input = await inquirer.prompt([
 
     const SVG = generateLogo(data)
 
+// write and store new SVG file
     fs.writeFile('./examples/logo.svg', SVG, function(err){
       if(err){
       throw err
@@ -64,5 +70,5 @@ const input = await inquirer.prompt([
 
 }
   
-
+// prompt user when running this file
 prompt()
